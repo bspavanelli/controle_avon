@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
-import Logo from "../../assets/logo_header.png";
-import Input from "../../components/Input";
-import Button from "../../components/Button";
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import Logo from '../../assets/logo_header.png';
+import Input from '../../components/Input';
+import Button from '../../components/Button';
 import {
   Container,
   Form,
@@ -11,21 +11,19 @@ import {
   ImageContainer,
   Image,
   ButtonContainer,
-} from "./styles";
+} from './styles';
 
 function Login() {
-  const [usuario, setUsuario] = useState("");
-  const [senha, setSenha] = useState("");
+  const [usuario, setUsuario] = useState('');
+  const [senha, setSenha] = useState('');
 
   const history = useHistory();
 
   function handleSubmit(event) {
     event.preventDefault();
-    if (usuario === "123" && senha === "456") {
-      history.push("/");
+    if (usuario === '123' && senha === '456') {
+      history.push('/');
     }
-    console.log({ usuario });
-    console.log({ senha });
   }
 
   function validateForm() {
@@ -45,19 +43,19 @@ function Login() {
             label="Usuário"
             name="usuario"
             value={usuario}
-            onChange={(e) => {
+            onChange={e => {
               setUsuario(e.target.value);
             }}
-          ></Input>
+          />
           <Input
             type="password"
             label="Senha"
             name="senha"
             value={senha}
-            onChange={(e) => {
+            onChange={e => {
               setSenha(e.target.value);
             }}
-          ></Input>
+          />
           <ButtonContainer>
             <Button disabled={!validateForm()}>Entrar</Button>
           </ButtonContainer>

@@ -1,7 +1,8 @@
-import React from "react";
-import Header from "../Header";
-import Footer from "../Footer/index.";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Header from '../Header';
+import Footer from '../Footer/index.';
 
 const Main = styled.main`
   background-color: var(--backgroundColor);
@@ -15,11 +16,15 @@ const Main = styled.main`
 function PageDefault({ children }) {
   return (
     <>
-      <Header></Header>
+      <Header />
       <Main>{children}</Main>
-      <Footer></Footer>
+      <Footer />
     </>
   );
 }
+
+PageDefault.propTypes = {
+  children: PropTypes.any,
+};
 
 export default PageDefault;

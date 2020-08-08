@@ -1,7 +1,7 @@
-import React from "react";
-import logo from "../../assets/logo.svg";
-import {App, AppHeader, AppLogo, AppLink} from "./styles";
-import PageDefault from "../../components/PageDefault";
+import React from 'react';
+import logo from '../../assets/logo.svg';
+import { App, AppHeader, AppLogo, AppLink } from './styles';
+import PageDefault from '../../components/PageDefault';
 
 function Home() {
   return (

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
   width: 100%;
@@ -18,11 +18,10 @@ export const Image = styled.img`
 `;
 
 export const Button = styled.a`
-  border: 2px solid #4caf50; 
+  border: 2px solid #4caf50;
   color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
 `;
-

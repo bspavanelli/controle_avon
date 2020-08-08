@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const App = styled.div`
   text-align: center;
@@ -22,7 +22,7 @@ export const AppLogo = styled.img`
   @media (prefers-reduced-motion: no-preference) {
     animation: App-logo-spin infinite 20s linear;
   }
-  
+
   @keyframes App-logo-spin {
     from {
       transform: rotate(0deg);
