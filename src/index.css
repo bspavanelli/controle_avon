@@ -21,11 +21,17 @@ body {
 }
 
 a {
-  color: inherit;
+  color: #0060B6;
+  text-decoration: none;
 }
 
-#root {
-  min-height: calc(100vh - var(--bodyPaddingTop));
-  display: flex;
-  flex-direction: column;
+a:hover 
+{
+   color:#00A0C6; 
+   text-decoration:none; 
+   cursor:pointer;  
+}
+
+li {
+  list-style: none;
 }

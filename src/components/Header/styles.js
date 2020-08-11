@@ -1,27 +1,30 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
+  background-color: var(--grayMedium);
   width: 100%;
-  height: 50px;
+  height: 60px;
   position: fixed;
   top: 0;
-  background-color: var(--grayMedium);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
-export const ImageContainer = styled.div`
-  width: 20%;
-`;
+export const ImageContainer = styled.div``;
 
 export const Image = styled.img`
   height: 40px;
-  margin: 5px;
+  margin-left: 10px;
 `;
 
-export const Button = styled.a`
-  border: 2px solid #4caf50;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
+export const MenuContainer = styled.ul`
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+`;
+
+export const MenuItem = styled.li`
+  padding: 10px;
 `;
