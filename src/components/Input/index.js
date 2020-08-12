@@ -5,10 +5,8 @@ import { Container, Label, InputText } from './styles';
 function Input(props) {
   return (
     <Container>
-      <Label>
-        {props.label}
-        <InputText {...props} />
-      </Label>
+      <InputText {...props} placeholder={props.label}/>
+      <Label>{props.label}</Label>
     </Container>
   );
 }
