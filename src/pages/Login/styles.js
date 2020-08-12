@@ -1,23 +1,23 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--grayMedium);
+  height: 100vh;
+  display: flex;
+  background: var(--background);
 `;
 
 export const Form = styled.form`
   box-shadow: 0 3px 6px #00000029;
-  min-height: 20vh;
-  padding: 30px;
+  padding: 30px 0;
+  background: var(--grayMedium);
+  margin: auto;
+  max-width: 50%;
 `;
 
 export const ImageContainer = styled.div`
-  width: 65%;
+  width: 60%;
   margin: auto;
-  padding: 0 0 2vh 0;
+  padding-bottom: 18px;
 `;
 
 export const Image = styled.img`
@@ -29,7 +29,6 @@ export const H2 = styled.h2`
   font-size: 16px;
   text-align: center;
   margin: 0;
-  padding: 0 0 3vh 0;
 `;
 
 export const FieldsContainer = styled.div`

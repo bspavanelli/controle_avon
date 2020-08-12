@@ -14,14 +14,14 @@ import {
 } from './styles';
 
 function Login() {
-  const [usuario, setUsuario] = useState('');
-  const [senha, setSenha] = useState('');
+  const [usuario, setUsuario] = useState(' ');
+  const [senha, setSenha] = useState(' ');
 
   const history = useHistory();
 
   function handleSubmit(event) {
     event.preventDefault();
-    if (usuario === '123' && senha === '456') {
+    if (usuario === '120.190.550-82' && senha === 'Qwe123?!') {
       history.push('/');
     }
   }
