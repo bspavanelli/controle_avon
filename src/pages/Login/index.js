@@ -43,6 +43,7 @@ function Login() {
             label="Usuário"
             name="usuario"
             value={usuario}
+            autoComplete="off"
             onChange={e => {
               setUsuario(e.target.value);
             }}
@@ -52,6 +53,7 @@ function Login() {
             label="Senha"
             name="senha"
             value={senha}
+            autoComplete="off"
             onChange={e => {
               setSenha(e.target.value);
             }}
