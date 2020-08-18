@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Container, Label, InputText } from './styles';
 
-function Input(props) {
+function Input({ label, ...props }) {
   return (
     <Container>
-      <InputText {...props} placeholder={props.label}/>
-      <Label>{props.label}</Label>
+      <InputText placeholder={label} {...props} />
+      <Label>{label}</Label>
     </Container>
   );
 }
