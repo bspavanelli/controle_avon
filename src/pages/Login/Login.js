@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Logo from '../../assets/logo_header.png';
-import Input from '../../components/Input';
-import Button from '../../components/Button';
+import Input from '../../components/Input/Input';
+import Button from '../../components/Button/Button';
 import {
   Container,
   Form,
@@ -11,23 +11,37 @@ import {
   ImageContainer,
   Image,
   ButtonContainer,
+  ErrorMessage,
 } from './styles';
 
 function Login() {
-  const [usuario, setUsuario] = useState(' ');
-  const [senha, setSenha] = useState(' ');
+  const [dadosLogin, setDadosLogin] = useState({ usuario: '', senha: '' });
+  const [showError, setShowError] = useState(false);
 
   const history = useHistory();
 
+  const validateUser = ({ usuario, senha }) => {
+    if (dadosLogin.usuario === usuario && dadosLogin.senha === senha)
+      history.push('/');
+    else
+      setShowError(true);
+  };
+
   function handleSubmit(event) {
     event.preventDefault();
-    if (usuario === '120.190.550-82' && senha === 'Qwe123?!') {
-      history.push('/');
-    }
+    fetch('http://localhost:3000/mock/login.json')
+      .then(r => r.json())
+      .then(json => validateUser(json[0]));
+  }
+
+  function handleChange(campo, valor) {
+    setShowError(false);
+
+    setDadosLogin({ ...dadosLogin, [campo]: valor });
   }
 
   function validateForm() {
-    return usuario.length > 0 && senha.length > 0;
+    return dadosLogin.usuario.length > 0 && dadosLogin.senha.length > 0;
   }
 
   return (
@@ -42,22 +56,23 @@ function Login() {
             type="text"
             label="Usuário"
             name="usuario"
-            value={usuario}
+            value={dadosLogin.usuario}
             autoComplete="off"
             onChange={e => {
-              setUsuario(e.target.value);
+              handleChange('usuario', e.target.value);
             }}
           />
           <Input
             type="password"
             label="Senha"
             name="senha"
-            value={senha}
+            value={dadosLogin.senha}
             autoComplete="off"
             onChange={e => {
-              setSenha(e.target.value);
+              handleChange('senha', e.target.value);
             }}
           />
+          {showError && <ErrorMessage style={{color: 'red'}}>Dados inválidos.</ErrorMessage>}
           <ButtonContainer>
             <Button disabled={!validateForm()}>Entrar</Button>
           </ButtonContainer>

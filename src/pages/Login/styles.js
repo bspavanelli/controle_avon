@@ -41,3 +41,8 @@ export const FieldsContainer = styled.div`
 export const ButtonContainer = styled.div`
   padding-top: 16px;
 `;
+
+export const ErrorMessage = styled.p`
+  margin-bottom: 0;
+  color: red;
+`;
